@@ -9,7 +9,6 @@ const inter = Inter({
 })
 async function productList()  {
   console.log('i called ');
-  return
     let data = await fetch('https://dummyjson.com/products');
     data = await data.json();
     return data.products
