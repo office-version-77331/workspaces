@@ -16,6 +16,7 @@ const home = () => {
         <span className=' px-6 '>  ---  Routing with Navigation</span>
       </div>
         <Link href='/product'> Products </Link>
+        <Link href='/user'> Go to User Page  </Link>
     </div>
   )
 }
