@@ -219,5 +219,58 @@ const object2: Person = {
 }
 console.log(object2.name);
 
+const object3: Person = {
+    name: 'Preet',
+    age: 23,
+    id: 1,
+    address: {
+        city: 'Pune',
+        state: 'MH'
+    }
+}
+console.log(object3.name);
 
+type Product = {
+    name: string,
+    price: number,
+    quantity: number
+}
+const product: Product = {
+    name: 'Mobile',
+    price: 20000,
+    quantity: 5
+}
+console.log(product.name);
+ const calculateTotalPrice = (product: Product): number => {
+    
+    return product.price * product.quantity
 
+ }
+    console.log(calculateTotalPrice(product));
+
+    // function call Signature :
+    type Student = {
+        name: string,
+        age: number,
+        id: number,
+        address: {
+            city: string,
+            state: string
+        },
+        greet: (country: string) => string // function call signature which takes string as an argument and return string as an output
+    }
+    const student: Student = {
+        name: 'Tushar',
+        age: 23,
+        id: 1,
+        address: {
+            city: 'Pune',
+            state: 'MH'
+        },
+        greet: (country : string ) => `welcome My name is ${student.name} and I am from ${country}`
+    }
+   const introduce = (student: Student): string => {
+       return `Hello, My name is ${student.name} and I am ${student.age} years old`
+   }
+    console.log(introduce(student));
+    console.log(student.greet('India'));
