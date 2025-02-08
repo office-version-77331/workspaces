@@ -274,3 +274,89 @@ console.log(product.name);
    }
     console.log(introduce(student));
     console.log(student.greet('India'));
+
+ // enum in type script : .
+ enum Role {
+    user = 'user',
+    admin = 'admin',
+ }
+
+ type LoginDetails = {
+    name: string,
+    email: string,
+    password: string,
+    role: Role
+    }
+
+    const user1 = {
+        name: 'Tushar',
+        email: 'user@gmail.com', 
+        password: '12345',
+        role: Role.user
+    }
+
+    const user2 = {
+        name: 'Preet',
+        email: 'user2@gmail.com',
+        password: '12345',
+        role: Role.admin
+    }
+
+    const isAdmine = (parameter:any ) : boolean  => { 
+        return parameter === Role.admin 
+    }
+     console.log('User Adimin : ', isAdmine(user1.role));
+        console.log('User Adimin : ', isAdmine(user2.role));
+
+        // Union Type :
+        type NumberOrString = number | string;
+
+
+        const add = (a: NumberOrString): NumberOrString => {
+            return  typeof a === 'number' ? a * 2 : typeof a === 'string' ? 'Hello  ' + a  :  ' the value is not a number or string' ; 
+        }
+ console.log(add(5));
+    console.log(add('Tushar'));
+
+ // Intersection Type :
+ 
+ type Human = { 
+    name: string ,
+    age : number
+ } 
+ type  Employee = {
+        id: number,
+        role: string 
+ } 
+ type EmployeeDetails = Human | Employee;   // The EmployeeDetails type is used to take multiple types for one variable .
+ type EmployeeDetails1 = Human & Employee;  // The intersection type is used to  combine the multiple types in one type.   
+
+    const employee : EmployeeDetails = { // The EmployeeDetails type is used to take multiple types for one variable .
+        name: 'Tushar',
+        age: 23,
+        id: 1,
+        role: 'Developer'
+    }
+    const personalInfo : EmployeeDetails = { // The EmployeeDetails type is used to take multiple types for one variable .
+        name: 'Tushar',
+        age: 23,
+    }
+
+    const employee1: EmployeeDetails1 =  { // The intersection type is used to  combine the multiple types in one type.
+        name: 'Tushar',
+        age: 23,
+         id: 1,
+        role: 'Developer'
+    }
+
+    // Generics in Type Script :
+     const genericFunction = <T>(value: T): T => {
+        return value
+    }
+   
+    console.log(genericFunction<string>('Hello'));
+    console.log(genericFunction<number>(5));
+    console.log(genericFunction<boolean>(true));
+    console.log(genericFunction<string[]>(['Hello', 'World']));
+  
+    console.log(genericFunction([1,2,3,4,6])); // if you dont provide an  generic type then it will take the type of the first element in the array.
