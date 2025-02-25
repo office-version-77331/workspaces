@@ -200,13 +200,13 @@ console.log(object1.name);
 
 // Object with type :
 type Person = {
-    name: string,
-    age: number,
-    id: number,
+    name: string;
+    age: number;
+    id: number;
     address: {
-        city: string,
-        state: string
-    }
+        city: string;
+        state: string;
+    };
 }
 const object2: Person = {
     name: 'Tushar',
@@ -231,9 +231,9 @@ const object3: Person = {
 console.log(object3.name);
 
 type Product = {
-    name: string,
-    price: number,
-    quantity: number
+    name: string;
+    price: number;
+    quantity: number;
 }
 const product: Product = {
     name: 'Mobile',
@@ -250,14 +250,14 @@ console.log(product.name);
 
     // function call Signature :
     type Student = {
-        name: string,
-        age: number,
-        id: number,
+        name: string;
+        age: number;
+        id: number;
         address: {
-            city: string,
-            state: string
-        },
-        greet: (country: string) => string // function call signature which takes string as an argument and return string as an output
+            city: string;
+            state: string;
+        };
+        greet: (country: string) => string; // function call signature which takes string as an argument and return string as an output
     }
     const student: Student = {
         name: 'Tushar',
@@ -282,10 +282,10 @@ console.log(product.name);
  }
 
  type LoginDetails = {
-    name: string,
-    email: string,
-    password: string,
-    role: Role
+    name: string;
+    email: string;
+    password: string;
+    role: Role;
     }
 
     const user1 = {
@@ -321,12 +321,12 @@ console.log(product.name);
  // Intersection Type :
  
  type Human = { 
-    name: string ,
-    age : number
+    name: string;
+    age : number;
  } 
  type  Employee = {
-        id: number,
-        role: string 
+        id: number;
+        role: string;
  } 
  type EmployeeDetails = Human | Employee;   // The EmployeeDetails type is used to take multiple types for one variable .
  type EmployeeDetails1 = Human & Employee;  // The intersection type is used to  combine the multiple types in one type.   
@@ -360,3 +360,8 @@ console.log(product.name);
     console.log(genericFunction<string[]>(['Hello', 'World']));
   
     console.log(genericFunction([1,2,3,4,6])); // if you dont provide an  generic type then it will take the type of the first element in the array.
+
+    const fruits1: object[] = [{Apple:'Apple', Banana: 'Banana', Mango:'Mango', Orange:'Orange'}];
+        console.log(fruits1);
+
+        console.log(typeof fruits1);

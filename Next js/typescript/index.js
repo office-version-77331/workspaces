@@ -252,4 +252,7 @@ console.log(genericFunction('Hello'));
 console.log(genericFunction(5));
 console.log(genericFunction(true));
 console.log(genericFunction(['Hello', 'World']));
-console.log(genericFunction([1, 2, 3, 4, 6]));
+console.log(genericFunction([1, 2, 3, 4, 6])); // if you dont provide an  generic type then it will take the type of the first element in the array.
+const fruits1 = [{ Apple: 'Apple', Banana: 'Banana', Mango: 'Mango', Orange: 'Orange' }];
+console.log(fruits1);
+console.log(typeof fruits1);

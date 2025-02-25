@@ -1,4 +1,5 @@
 import AddTodo from "@/components/AddTodo"
+import TodoItem from "@/components/TodoItem"
 
 
 const Page = () => {
@@ -7,6 +8,7 @@ const Page = () => {
       <h1>Todo List</h1>
       <div>
         <AddTodo />
+        <TodoItem /> 
       </div>
     </main>
 

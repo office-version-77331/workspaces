@@ -23,7 +23,11 @@ type TodoContextType = {
 };
 
 // Create Context with Default Value as Null
-const TodoContext = createContext<TodoContextType | null>();
+const TodoContext = createContext<TodoContextType>({
+  todoItems: [],
+  addTodoItems: () => {},
+  deleteTodoItem: () => {},
+});
 
 const todoItemsReducer = (state: TodoItem[], action: TodoAction): TodoItem[] => {
   switch (action.type) {
